@@ -117,6 +117,3 @@ sudo chmod -R 755 /home/acunetix/.acunetix/
 
 - **Consulter la documentation officielle ou contacter le support si besoin**
 
----
-
-Veux-tu que je prépare ce fichier formaté pour un push GitHub direct ?
