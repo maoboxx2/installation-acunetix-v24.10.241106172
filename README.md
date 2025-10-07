@@ -81,39 +81,44 @@ https://localhost:3443/
 ```
 ## Dépannage
 
-Si vous rencontrez des problèmes lors de l'installation ou de l'utilisation d'Acunetix, voici quelques étapes de dépannage courantes :
+If you encounter any issues while installing or using Acunetix, here are some common troubleshooting steps:
 
-- **Vérifier le statut du service :**  
+- **Check service status:**  
 ```
 sudo systemctl status acunetix
 ```
 
-- **Consulter les logs pour identifier les erreurs :**  
+- **Check the logs to identify errors :**  
 ```
 journalctl -u acunetix -f
 ```
-Cela affiche les logs en temps réel pour détecter les éventuelles erreurs.
+This displays the logs in real time to detect any errors.
 
-- **Problèmes de licence :**  
-- Vérifiez que les fichiers `license_info.json` et `wa_data.dat` sont bien copiés dans le répertoire `/home/acunetix/.acunetix/data/license/` avec les bons droits (lecture seule).  
-- Assurez-vous que les attributs d'immuabilité sont bien appliqués :
+- **Licence issues :**  
+- Ensure that the `licence_info.json` and `wa_data.dat` files are copied to the `/home/acunetix/.acunetix/data/licence/` directory with the correct permissions (read-only)  
+- Ensure that immutability attributes are properly applied :
   ```
   sudo lsattr /home/acunetix/.acunetix/data/license/
   ```
 
-- **Permissions des fichiers :**  
-Veillez à ce que tous les fichiers d'installation et exécutables aient les permissions nécessaires avec :
+- **File permissions:**  
+Ensure that all installation files and executables have the necessary permissions with:
 ```
 sudo chmod +x /chemin/vers/le/fichier
 ```
 
-- **Vérifier les dossiers et chemins critiques**  
-  - Confirmez l’existence des chemins utilisés dans les commandes, notamment `/home/acunetix/.acunetix/` et sous-dossiers.  
-  - Vérifiez que l'utilisateur `acunetix` possède bien les droits en lecture/écriture/exécution selon besoin :  
+- **Check critical files and paths**
+- Confirm the existence of the paths used in the commands, in particular `/home/acunetix/.acunetix/` and subfolders.
+- Verify that the `acunetix` user has read/write/execute permissions as needed:  
 ```
 sudo chown -R acunetix:acunetix /home/acunetix/.acunetix/
 sudo chmod -R 755 /home/acunetix/.acunetix/
 ```
 
-- **Consulter la documentation officielle ou contacter le support si besoin**
+- **Consult the official documentation or contact support if necessary.**
+
+
+
+
+																																				*@M@oboxx2
 
