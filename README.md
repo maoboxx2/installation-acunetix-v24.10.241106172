@@ -6,7 +6,7 @@
 <p align="center"> Acunetix by Invicti Security is an application security testing tool built to help small & mid-size organizations around the world take control of their web security.
 </p>
 
-<p align="center"><img src="https://github.com/maoboxx2/installation-acunetix-v24.10.241106172/blob/main/acunetix-premium.png">
+<p align="center"><img src="https://github.com/maoboxx2/installation-acunetix-v24.10.241106172/blob/main/acunetix-premium-v2.png">
  
 <br></br>
 
