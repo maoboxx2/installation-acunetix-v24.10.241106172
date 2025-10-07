@@ -1,45 +1,78 @@
-# Installation Acunetix v24.10.241106172
 
-Ce dépôt contient tous les fichiers nécessaires pour installer et configurer **Acunetix v24.10.241106172** sur votre environnement.
 
-## Contenu du dépôt
+<h1 align="center"> Acunetix-v24.10.241106172
+</h1>
 
-- scripts/: scripts d'installation et de configuration
-- configs/: fichiers de configuration
-- docs/: guides et documentation
-- .gitignore: fichiers à ignorer pour Git
+<p align="center"> Acunetix by Invicti Security is an application security testing tool built to help small & mid-size organizations around the world take control of their web security.
+</p>
 
-## Prérequis
+<p align="center"><img src="https://github.com/xiv3r/Acunetix-v24.10.241106172/blob/main/acunetix-premium.png">
+ 
+<br></br>
 
-- Système d'exploitation compatible (Linux / Windows)
-- Droits administrateur pour l'installation
-- Connexion Internet pour les téléchargements nécessaires
-
-## Installation
-
-1. Configurer l'environnement :
-```bash
-bash scripts/setup_env.sh
+## install config
 ```
-
-2. Installer Acunetix :
-```bash
-bash scripts/install_acunetix.sh
+wget -qO- https://raw.githubusercontent.com/xiv3r/Acunetix-v24.10.241106172/refs/heads/main/config.sh | sudo sh
 ```
-
-## Configuration
-
-- Les paramètres par défaut sont dans configs/acunetix_config.json
-- Modifier les valeurs selon vos besoins avant d'exécuter les scripts
-
-## Documentation
-
-Consultez le fichier docs/guide_installation.pdf pour les instructions détaillées et les captures d'écran.
-
-## Contribution
-
-Pour contribuer, créer une branche à partir de main et soumettre vos modifications via Pull Request.
-
-## License
-
-Voir le fichier LICENSE.
+## clone the repo
+```
+git clone https://github.com/xiv3r/Acunetix-v24.10.241106172.git
+```
+```
+cd Acunetix-v24.10.241106172
+```
+## download the acunetix
+```
+wget https://github.com/xiv3r/Acunetix-v24.10.241106172/releases/download/acunetix/acunetix_24.10.241106172_x64.sh
+```
+## install the tools
+```
+sudo bash acunetix_24.10.241106172_x64.sh
+```
+## Once installed let's stop its service
+```sh
+sudo systemctl stop acunetix
+```
+## replace wvsc file:
+```
+sudo cp wvsc /home/acunetix/.acunetix/v_241106172/scanner/wvsc
+```
+```
+sudo chown acunetix:acunetix /home/acunetix/.acunetix/v_241106172/scanner/wvsc
+```
+```
+sudo chmod +x /home/acunetix/.acunetix/v_241106172/scanner/wvsc
+```
+## to add licenses
+```sh
+sudo rm /home/acunetix/.acunetix/data/license/*
+```
+```
+sudo cp license_info.json /home/acunetix/.acunetix/data/license/
+```
+```
+sudo cp wa_data.dat /home/acunetix/.acunetix/data/license/
+```
+```
+sudo chown acunetix:acunetix /home/acunetix/.acunetix/data/license/license_info.json
+```
+```
+sudo chown acunetix:acunetix /home/acunetix/.acunetix/data/license/wa_data.dat
+```
+```
+sudo chmod 444 /home/acunetix/.acunetix/data/license/license_info.json
+```
+```
+sudo chmod 444 /home/acunetix/.acunetix/data/license/wa_data.dat
+```
+```
+sudo chattr +i /home/acunetix/.acunetix/data/license/license_info.json
+```
+```
+sudo chattr +i /home/acunetix/.acunetix/data/license/wa_data.dat
+```
+## restart acunetix
+```
+sudo systemctl start acunetix
+```
+## Now login back to application
