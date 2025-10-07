@@ -1,0 +1,9 @@
+# Logs
+*.log
+
+# Fichiers temporaires
+*.tmp
+*.bak
+
+# Secrets
+configs/secrets.json
